@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .messages-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .message:last-child {
+            border-bottom: none;
+        }
+        .nombre {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .carrera {
+            color: blue;
+            font-style: italic;
+        }
+        .txt-mensaje {
+            margin-top: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Mensajes</h1>
+    <div class="messages-container">
+        {% for mensaje in mensajes %}
+        <div class="message">
+            <span class="nombre">{{ mensaje.persona.nombre }} {{ mensaje.persona.ap_pat }} {{ mensaje.persona.ap_mat }}</span>
+            <span class="carrera">{{ mensaje.persona.carrera.nombre }}</span>
+            <p class="txt-mensaje">{{ mensaje.txt_mensaje }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
