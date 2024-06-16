@@ -1,0 +1,97 @@
+<!-- templates/chat/mensaje_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .messages-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .message:last-child {
+            border-bottom: none;
+        }
+        .nombre {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        .carrera {
+            color: #2980b9;
+            font-style: italic;
+        }
+        .txt-mensaje {
+            margin-top: 5px;
+            font-size: 1em;
+            color: #34495e;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .actions a {
+            margin-right: 10px;
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .actions a:hover {
+            text-decoration: underline;
+        }
+        .new-message-btn, .back-btn {
+            display: block;
+            width: max-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #cca9dd;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .new-message-btn:hover, .back-btn:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Mensajes</h1>
+    <a href="{% url 'mensaje_create' %}" class="new-message-btn">Nuevo Mensaje</a>
+    <div class="messages-container">
+        {% for mensaje in mensajes %}
+        <div class="message">
+            <span class="nombre">{{ mensaje.persona.nombre }} {{ mensaje.persona.ap_pat }} {{ mensaje.persona.ap_mat }}</span>
+            <span class="carrera">{{ mensaje.persona.carrera.nombre }}</span>
+            <p class="txt-mensaje">{{ mensaje.txt_mensaje }}</p>
+            <div class="actions">
+                <a href="{% url 'mensaje_update' mensaje.pk %}">Editar</a>
+                <a href="{% url 'mensaje_delete' mensaje.pk %}">Eliminar</a>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="/" class="back-btn">Ir a Inicio</a>
+    </div>
+</body>
+</html>
