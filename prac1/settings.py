@@ -6,7 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='django-ejemplo-webapp.azurewebsites.net,localhost,127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = ['django-ejemplo-webapp.azurewebsites.net', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://django-ejemplo-webapp.azurewebsites.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
