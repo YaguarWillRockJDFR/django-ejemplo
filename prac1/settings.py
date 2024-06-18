@@ -82,6 +82,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Security settings for production
 CSRF_TRUSTED_ORIGINS = ['https://django-ejemplo-webapp.azurewebsites.net']
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
