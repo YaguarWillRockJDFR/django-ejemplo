@@ -31,7 +31,7 @@ jobs:
       run: |
         python manage.py collectstatic --noinput
 
-    - name: 'Run Startup Script'
+    - name: 'Execute startup.sh'
       run: |
         chmod +x startup.sh
         ./startup.sh
