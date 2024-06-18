@@ -29,6 +29,7 @@ jobs:
 
     - name: 'Collect Static Files'
       run: |
+        python manage.py collectstatic --noinput --clear
         python manage.py collectstatic --noinput
 
     - name: 'Execute startup.sh'
