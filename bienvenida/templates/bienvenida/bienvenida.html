@@ -37,12 +37,33 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Bienvenido, jdfr</h1>
         <h2><a href="/mensajes/">Ir a Mensajes</a></h2>
+        <div class="button-container">
+            <a href="/admin" class="button">Ir a Admin</a>
+        </div>
     </div>
 </body>
 </html>
