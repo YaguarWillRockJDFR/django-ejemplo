@@ -77,12 +77,10 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Security settings for production
 CSRF_TRUSTED_ORIGINS = ['https://django-ejemplo-webapp.azurewebsites.net']
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
