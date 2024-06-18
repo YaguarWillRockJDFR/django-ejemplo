@@ -17,7 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bienvenida',
     'chat',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
